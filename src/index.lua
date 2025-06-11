@@ -1,18 +1,18 @@
 local method = GetMethod()
 if method == "GET" then
-    ServeAsset(WIKI_PATH)
+  local wiki = assert(Slurp(WIKI_PATH))
+  Write(wiki)
 elseif method == "HEAD" then
-    local wiki = LoadAsset(WIKI_PATH)
-    SetStatus(200)
-    SetHeader("Content-Type", "text/html")
-    SetHeader("Content-Length", tostring(#wiki))
+  local wiki = assert(Slurp(WIKI_PATH))
+  SetStatus(200)
+  SetHeader("Content-Type", "text/html")
+  SetHeader("Content-Length", tostring(#wiki))
 elseif method == "OPTIONS" then
-    SetStatus(200)
-    SetHeader("Allow", "GET,HEAD,POST,OPTIONS,CONNECT,PUT,DAV,dav")
-    SetHeader("x-api-access-type", "file")
-    SetHeader("dav", "tw5/put")   
+  SetStatus(200)
+  SetHeader("Allow", "GET,HEAD,POST,OPTIONS,CONNECT,PUT,DAV,dav")
+  SetHeader("x-api-access-type", "file")
+  SetHeader("dav", "tw5/put")
 elseif method == "PUT" then
-    local _, err = Barf(WIKI_PATH, GetBody())
-    if err then printf("an error occured while saving:", err) end
-    SetStatus(204, "No Content")
+  assert(Barf(WIKI_PATH, GetBody()))
+  SetStatus(204, "No Content")
 end
