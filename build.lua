@@ -1,7 +1,7 @@
 local path = require("path")
 
 local redbean = "bin/redbean-3.0.0.com"
-local notes = "dist/til.com"
+local notes = "dist/tid.com"
 
 assert(Barf(notes, assert(Slurp(redbean))))
 print("Copied " .. redbean .. " to " .. notes)
