@@ -4,7 +4,9 @@ Tid is a simple TiddlyWiki autosaver. It should work out of the box on every sys
 
 ## Using tid
 
-Download `tid.com` from "Releases" and click to run. By default, Tid edits a wiki named `wiki.html` in its folder and will open a tab in your web browser. To edit a wiki in another location, just drag it onto `tid.com` to "Open with `tid.com`".
+Download `tid.com` from "Releases" and click to run.
+
+By default, Tid edits a wiki named `wiki.html` in its folder and will open a tab in your web browser. To edit a wiki in another location, just drag it onto `tid.com` to "Open with `tid.com`".
 
 Alternatively, after downloading `tid.com`, run in the shell of your choice:
 
