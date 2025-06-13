@@ -20,7 +20,7 @@ where `your_wiki.html` is your wiki's filename. If the first method doesn't work
 
 Tid is powered by [redbean](http://redbean.dev), a wonderful server that runs everywhere unmodified, blazing fast, as a single file, and allow you to build apps with the same properties.
 
-Basically, Tiddlywiki can autosave itself if it's served on a WebDAV server, so Tid implements just enough of WebDAV to convince Tiddlywiki to hand its data over. Read [index.lua](src/index.lua), it's literally 20 lines of lua code.
+Basically, Tiddlywiki can autosave itself if it's served on a WebDAV server, so Tid implements just enough of WebDAV (literally 20 lines of lua code, see [index.lua](src/index.lua)) to convince Tiddlywiki to hand its data over.
 
 For more details, see [this blog post](https://rpdillon.net/redbean-tiddlywiki-saver.html) where I got most of my code from.
 
